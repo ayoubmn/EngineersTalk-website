@@ -20,6 +20,19 @@ public class UserEntity implements Serializable {
 	@Column(nullable=false,length=50)
 	private String firstName;
 	
+	@Column(nullable=false,length=50)
+	private String lastName;
+	
+	@Column(nullable=false,length=120)
+	private String email;
+	
+	@Column(nullable=false)
+	private String encryptedPassword;
+	private String emailVerificationToken;
+	
+	@Column(nullable=false)
+	private Boolean emailVerificationStatus=false;
+	
 	public long getId() {
 		return id;
 	}
@@ -84,16 +97,5 @@ public class UserEntity implements Serializable {
 		this.emailVerificationStatus = emailVerificationStatus;
 	}
 
-	@Column(nullable=false,length=50)
-	private String lastName;
 	
-	@Column(nullable=false,length=120)
-	private String email;
-	
-	@Column(nullable=false)
-	private String encryptedPassword;
-	private String emailVerificationToken;
-	
-	@Column(nullable=false,columnDefinition="boolean default false")
-	private Boolean emailVerificationStatus;
 }
