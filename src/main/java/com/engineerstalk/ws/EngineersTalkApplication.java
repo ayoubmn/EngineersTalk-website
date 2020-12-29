@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import com.engineerstalk.ws.ui.controller.UserController;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = UserController.class)
+//@ComponentScan(basePackageClasses = UserController.class)
+@ComponentScan(basePackages = "com.engineerstalk.ws")
 
 public class EngineersTalkApplication {
 

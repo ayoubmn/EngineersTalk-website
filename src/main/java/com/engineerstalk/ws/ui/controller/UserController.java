@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.engineerstalk.ws.service.UserService;
+import com.engineerstalk.ws.service.impl.UserServiceImpl;
 import com.engineerstalk.ws.shared.dto.UserDto;
 import com.engineerstalk.ws.ui.model.request.UserDetailsRequestModel;
 import com.engineerstalk.ws.ui.model.response.UserRest;
 
 @RestController
-@RequestMapping("/users") // http://localhost:8080/users
+@RequestMapping("users") // http://localhost:8080/users
 public class UserController {
 
 	@Autowired

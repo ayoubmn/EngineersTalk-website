@@ -7,7 +7,7 @@ public class UserDetailsRequestModel {
 	private String email;
 	private String password;
 	
-	public UserDetailsRequestModel(){}
+	/*public UserDetailsRequestModel(){}
 	
 	public UserDetailsRequestModel(String firstName, String lastName, String email, String password) {
 		super();
@@ -15,7 +15,7 @@ public class UserDetailsRequestModel {
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-	}
+	}*/
 	
 	
 	public String getFirstName() {

@@ -11,6 +11,8 @@ import com.engineerstalk.ws.shared.dto.UserDto;
 
 @Service
 public class UserServiceImpl implements UserService{
+	
+	//public UserServiceImpl(){}
 
 	@Autowired
 	UserRepository userRepository;
