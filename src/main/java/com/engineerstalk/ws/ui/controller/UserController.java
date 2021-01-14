@@ -37,7 +37,6 @@ public class UserController {
 
 		return returnValue;
 	}
-	
 	@PutMapping
 	public String updateUser(){
 		return "update user was called";
@@ -46,5 +45,4 @@ public class UserController {
 	public String deleteUser(){
 		return "delete user was called";
 	}
-	
 }
