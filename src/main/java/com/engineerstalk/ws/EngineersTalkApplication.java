@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.engineerstalk.ws.ui.controller.UserController;
 
 @SpringBootApplication
 //@ComponentScan(basePackageClasses = UserController.class)
@@ -23,4 +22,9 @@ public class EngineersTalkApplication {
 		return new BCryptPasswordEncoder();
 	}
 
+	@Bean
+	public SpringApplicationContext springApplicationContext() {
+		return new SpringApplicationContext();
+		
+	}
 }

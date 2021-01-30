@@ -1,4 +1,4 @@
-package com.engineerstalk.ws.security;
+ package com.engineerstalk.ws.security;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +16,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.engineerstalk.ws.SpringApplicationContext;
+import com.engineerstalk.ws.service.UserService;
+import com.engineerstalk.ws.shared.dto.UserDto;
 import com.engineerstalk.ws.ui.model.request.UserLoginRequestModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -62,6 +65,9 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 				.setExpiration(new Date(System.currentTimeMillis()+SecurityConstants.EXPIRATION_TIME))
 				.signWith(SignatureAlgorithm.HS512, SecurityConstants.TOKEN_SECRET)
 				.compact();
+		UserService userService = (UserService)SpringApplicationContext.getBean("userServiceImpl");
+		UserDto userDto= userService.getUser(username);
 		res.addHeader(SecurityConstants.HEADER_STRING, SecurityConstants.TOKEN_PREFIX+token);
+		res.addHeader("userID", userDto.getUserId());
 	}
 }
