@@ -16,7 +16,7 @@ import com.engineerstalk.ws.ui.model.request.PostDetailsRequestModel;
 import com.engineerstalk.ws.ui.model.response.PostRest;
 
 @RestController
-@RequestMapping("posts") // http://localhost:8080/posts
+@RequestMapping("post") // http://localhost:8080/posts
 
 public class PostController {
 	@Autowired

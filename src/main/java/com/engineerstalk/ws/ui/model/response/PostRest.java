@@ -1,17 +1,29 @@
 package com.engineerstalk.ws.ui.model.response;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 public class PostRest {
-	private String userID;
+	private long idPost;
+	private String userId;	
+
+
+
+	public long getIdPost() {
+		return idPost;
+	}
+	public void setIdPost(long idPost) {
+		this.idPost = idPost;
+	}
 	private String text;
 	private Date date;
 
-	public String getUserID() {
-		return userID;
+
+	public String getUserId() {
+		return userId;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	public String getText() {
 		return text;

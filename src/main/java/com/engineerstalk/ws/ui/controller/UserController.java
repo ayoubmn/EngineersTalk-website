@@ -16,7 +16,7 @@ import com.engineerstalk.ws.ui.model.request.UserDetailsRequestModel;
 import com.engineerstalk.ws.ui.model.response.UserRest;
 
 @RestController
-@RequestMapping("users") // http://localhost:8080/users
+@RequestMapping("user") // http://localhost:8080/users
 public class UserController {
 
 	@Autowired

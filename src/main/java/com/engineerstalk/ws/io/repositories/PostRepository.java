@@ -8,5 +8,5 @@ import com.engineerstalk.ws.io.entity.PostEntity;
 @Repository
 public interface PostRepository extends CrudRepository<PostEntity, Long> {
 
-	//UserEntity findByEmail(String email);
+	PostEntity findByIdPost(long idPost);
 }

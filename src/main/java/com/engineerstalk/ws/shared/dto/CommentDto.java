@@ -1,30 +1,36 @@
 package com.engineerstalk.ws.shared.dto;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 
 
-public class PostDto implements Serializable{
+public class CommentDto implements Serializable{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2490231221527938669L;
-
-	private long idPost;
-    private String userId;
+	private static final long serialVersionUID = -7078649951030060476L;
+	
+	private long id;
+	private String userId;
+	private long id_post;
 	private String text;
 	private Date date;
 
 
-
-
-	public long getIdPost() {
-		return idPost;
+	public long getId_post() {
+		return id_post;
 	}
-	public void setIdPost(long idPost) {
-		this.idPost = idPost;
+
+	public void setId_post(long id_post) {
+		this.id_post = id_post;
+	}
+
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getUserId() {
 		return userId;
@@ -32,6 +38,7 @@ public class PostDto implements Serializable{
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+
 	public String getText() {
 		return text;
 	}
@@ -45,5 +52,4 @@ public class PostDto implements Serializable{
 		this.date = date;
 	}
 
-	
 }

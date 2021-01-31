@@ -2,17 +2,22 @@ package com.engineerstalk.ws.io.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-@Entity(name="posts")
+import javax.persistence.OneToMany;
+
+@Entity(name="post")
 public class PostEntity implements Serializable{
 	private static final long serialVersionUID = 8005593197198689977L;
 	@Id
 	@GeneratedValue
-	private long id;
+	private long idPost;
 	
 	@Column(nullable=false)
 	private String userId;
@@ -25,12 +30,20 @@ public class PostEntity implements Serializable{
 	private Date date;
 
 	
-	public long getId() {
-		return id;
+	@Column(nullable=true)
+    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY,
+    cascade = CascadeType.ALL)
+	private Set<CommentEntity> comments;
+
+	
+
+
+	public long getIdPost() {
+		return idPost;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdPost(long idPost) {
+		this.idPost = idPost;
 	}
 
 
