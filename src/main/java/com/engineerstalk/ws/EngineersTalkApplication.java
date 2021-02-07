@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.engineerstalk.ws.security.AppProperties;
+
 
 @SpringBootApplication
 //@ComponentScan(basePackageClasses = UserController.class)
@@ -26,5 +28,10 @@ public class EngineersTalkApplication {
 	public SpringApplicationContext springApplicationContext() {
 		return new SpringApplicationContext();
 		
+	}
+	
+	@Bean(name="AppProperties")
+	public AppProperties getAppProperties() {
+		return new AppProperties();
 	}
 }

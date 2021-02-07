@@ -1,11 +1,15 @@
 package com.engineerstalk.ws.io.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity(name="user")
 public class UserEntity implements Serializable {
@@ -32,6 +36,11 @@ public class UserEntity implements Serializable {
 	
 	@Column(nullable=false)
 	private Boolean emailVerificationStatus=false;
+	
+    @OneToMany(mappedBy = "sender", fetch = FetchType.LAZY,
+    cascade = CascadeType.ALL)
+	private Set<MessageEntity> messagesSent;
+
 	
 	public long getId() {
 		return id;
